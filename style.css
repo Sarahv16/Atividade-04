@@ -1,0 +1,177 @@
+/******************************************************************************
+Projeto: Loja de Eletrônicos
+
+Responsáveis:
+• Estrutura: Expedito
+• Design: Sarah
+• Interatividade: Helena
+******************************************************************************/
+
+/*reseta os padding e margin padrão do navegador*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*Como não da para mexer no HTML, o body é o container da página toda*/
+body {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+/*define que o header organiza seus filhos na horizontal*/
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
+/*organiza a lista*/
+nav ul {
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+  list-style: none;
+
+}
+
+/* Interatividade do menu */
+nav ul li a {
+  transition: 0.3s ease;
+}
+
+nav ul li a:hover {
+  color:#f74780;
+}
+
+nav ul li a:active {
+  transform: scale(0.95);
+}
+
+nav ul li a:focus {
+  outline: 2px solid #f74780;
+}
+
+/*organiza os cards horizontalmente*/
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 2rem;
+  /*se hipoteticamente for maior que a tela, não vai quebrar, se reorganiza*/
+  flex-wrap: wrap;
+}
+
+/*Define o tamanho geral do card*/
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 350px;
+  max-width: 340px;
+  gap: 1.5rem;
+
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+}
+
+/*evita que a imagem estoure a tela*/
+.card-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+
+  transition: 0.4s;
+}
+
+.card:hover .card-img {
+  transform: scale(1.05);
+}
+
+/*dá um espaçamento entre os textos*/
+.card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  flex-grow: 1;
+}
+
+/* Interatividade da tag */
+.tag {
+  transition: 0.3s;
+}
+
+.card:hover .tag {
+  transform: rotate(-5deg) scale(1.1);
+}
+
+/* Interatividade do título */
+.card-title {
+  transition: 0.3s;
+}
+
+.card:hover .card-title {
+  color: #f74780;
+}
+
+/* Interatividade do preço */
+.price {
+  transition: 0.3s;
+}
+
+.card:hover .price {
+  transform: scale(1.08);
+}
+
+/*organiza o rodapé do card*/
+.card-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: auto;
+}
+
+/* Interatividade do botão */
+.btn {
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+}
+
+.btn:active {
+  transform: scale(0.96);
+}
+
+.btn:focus {
+  outline: 2px solid #f74780;
+}
+
+/*Aplicando Media Query para responsividade mobile*/
+
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+  }
+}
+
+@import url('https://googleapis.com');
+
+body {
+  font-family: 'Poppins', sans-serif;
+  font-style: italic;
+  color:#f74780;
+  background-color: #E6E6FA;
+}
+
